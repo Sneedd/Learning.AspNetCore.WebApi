@@ -22,23 +22,23 @@ public static class Program
             //options.Filters.Add(new AuthorizeFilter());
         });
 
-        services.AddAuthentication()
-            .AddJwtBearer(options =>
-            {
-                options.Authority = "";
-            });
-        services.AddAuthorization(options =>
-        {
-            options.AddPolicy("default", policy =>
-            {
-                policy.RequireAuthenticatedUser();
-            });
-            options.AddPolicy("admin", policy =>
-            {
-                policy.RequireAuthenticatedUser();
-                policy.RequireClaim("role", "admin");
-            });
-        });
+        //services.AddAuthentication()
+        //    .AddJwtBearer(options =>
+        //    {
+        //        options.Authority = "";
+        //    });
+        //services.AddAuthorization(options =>
+        //{
+        //    options.AddPolicy("default", policy =>
+        //    {
+        //        policy.RequireAuthenticatedUser();
+        //    });
+        //    options.AddPolicy("admin", policy =>
+        //    {
+        //        policy.RequireAuthenticatedUser();
+        //        policy.RequireClaim("role", "admin");
+        //    });
+        //});
 
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         services.AddEndpointsApiExplorer();
